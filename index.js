@@ -15,3 +15,26 @@ function buyCake() {
     info: 'First redux action'
   };
 }
+
+// Reducer takes in previousState (state of tha application before making any change) and action and returns newState.
+// (previousState, action) => newState;
+// We defined our action above, now what is remaining is to determine what our application state looks like.
+// Application state is represented by a single object.
+// We pass the initial state as the default value for the state parameter of the reducer. As the application starts,
+// the initial state of the application is passed in as the arguement to the reducer function.
+// From the reducer function, we are not mutating the state object, we are returning the state object.
+const initialState = {
+  numOfCakes: 10
+};
+
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case BUY_CAKE:
+      return {
+        ...state,
+        numOfCakes: state.numOfCakes - 1
+      };
+    default:
+      return state;
+  }
+};
