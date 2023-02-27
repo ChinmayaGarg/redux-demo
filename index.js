@@ -48,3 +48,8 @@ const reducer = (state = initialState, action) => {
  Responsibility 1: Redux store holding the application state.
 */
 const store = createStore(reducer);
+
+/* 
+ Responsibility 2: Expose getState() method to give the current state of the store.
+*/
+console.log('initial State', store.getState());
