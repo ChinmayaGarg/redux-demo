@@ -74,3 +74,10 @@ store.dispatch(buyCake());
  Finally, unsubscribe the store by calling the function returned by subscribe method.
 */
 unsubscribed();
+
+/* 
+When we dispatch an action, the reducer sees the action type is buy cake. 
+The reducer will then try to match this type with the switch cases.
+It matches the first case and simply decrements the number of cakes by 1 and returns new state.
+Now, the store's state is updated, which calls the listener automatically and logs to the console.
+*/
