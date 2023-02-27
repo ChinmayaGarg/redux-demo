@@ -1,3 +1,6 @@
+const redux = require('redux');
+const createStore = redux.createStore;
+
 const BUY_CAKE = 'BUY_CAKE';
 
 // Action is an object with type property. We are not restricted to just have a type property, other than type the
@@ -38,3 +41,10 @@ const reducer = (state = initialState, action) => {
       return state;
   }
 };
+
+/* 
+ Step1: Create store, createStore function accepts parameter which is reducer function.
+ The reducer function has the initial state of the application, the reducer is required for the store to make the state transitions based on the actions perceive.
+ Responsibility 1: Redux store holding the application state.
+*/
+const store = createStore(reducer);
