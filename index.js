@@ -59,3 +59,13 @@ console.log('initial State', store.getState());
  Subscribe method accepts a function that is called every time the state in the redux store changes.
 */
 store.subscribe(() => console.log('Updated State', store.getState()));
+
+/* 
+ Responsibility 3: Store Provides dispatch method to update the state.
+ Dispatch method accepts an action as a parameter. We can directly provide an action if we want to, but we have an action_creator.
+ Hence, we invoke action creator as the parameter which returns the action.
+*/
+store.dispatch(buyCake());
+// To cause few more state transitions we dispatched action few more times.
+store.dispatch(buyCake());
+store.dispatch(buyCake());
