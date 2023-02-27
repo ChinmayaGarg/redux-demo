@@ -19,6 +19,15 @@ function buyCake() {
   };
 }
 
+/*
+ Why action creators are required? 
+ We can by all means pass in the object itself as the parameter to the dispatch method, but by having a action creator,
+ any changes to action object will only happen at one place. 
+ If we would have only passed in the object and not action_creator in every dispatch method which is called in several places of the application,
+ and after few days if we either have to add new property or rename a property, we have to do it in all the 5-10 different places, 
+ which might lead to several mistakes like, we might forget to update some actions, difference of properties between 2 same actions called at separate places etc.
+*/
+
 // Reducer takes in previousState (state of tha application before making any change) and action and returns newState.
 // (previousState, action) => newState;
 // We defined our action above, now what is remaining is to determine what our application state looks like.
