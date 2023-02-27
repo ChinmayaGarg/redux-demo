@@ -58,7 +58,7 @@ console.log('initial State', store.getState());
  Responsibility 4: Subscribe the changes of the store to the app using subscribe method.
  Subscribe method accepts a function that is called every time the state in the redux store changes.
 */
-store.subscribe(() => console.log('Updated State', store.getState()));
+const unsubscribed = store.subscribe(() => console.log('Updated State', store.getState()));
 
 /* 
  Responsibility 3: Store Provides dispatch method to update the state.
@@ -69,3 +69,8 @@ store.dispatch(buyCake());
 // To cause few more state transitions we dispatched action few more times.
 store.dispatch(buyCake());
 store.dispatch(buyCake());
+
+/* 
+ Finally, unsubscribe the store by calling the function returned by subscribe method.
+*/
+unsubscribed();
