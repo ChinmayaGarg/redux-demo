@@ -27,6 +27,11 @@ const initialIceCreamState = {
   numOfIceCreams: 10
 };
 
+// Each reducer manage its own part of global state,
+// the state parameter is different for every reducer and corresponds to part of the state it manages.
+// As our app grows in size we can split the reducers into separate files and keep them completely independent and manage different areas.
+// Eg: authReducer, profileReducer, userReducer etc.
+
 const cakeReducer = (state = initialCakeState, action) => {
   switch (action.type) {
     case BUY_CAKE:
