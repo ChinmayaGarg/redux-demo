@@ -53,3 +53,9 @@ const store = createStore(reducer);
  Responsibility 2: Expose getState() method to give the current state of the store.
 */
 console.log('initial State', store.getState());
+
+/* 
+ Responsibility 4: Subscribe the changes of the store to the app using subscribe method.
+ Subscribe method accepts a function that is called every time the state in the redux store changes.
+*/
+store.subscribe(() => console.log('Updated State', store.getState()));
